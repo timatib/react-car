@@ -1,7 +1,7 @@
 import React from "react";
 
 const Auto = () => {
-  return <div>auto</div>;
+  return <div>auto 24</div>;
 };
 
 export default Auto;
