@@ -1,0 +1,16 @@
+.navBar{
+    width: 1044px;
+    margin: 0 auto;
+    background-color: cornflowerblue;
+    height: auto;
+    min-height: 50px;
+}
+
+.ulNavbar{
+    display: flex;
+    margin: 0;
+}
+
+.ulNavbar li{
+    margin-left: 20px;
+}
