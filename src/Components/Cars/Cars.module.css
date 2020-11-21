@@ -1,0 +1,13 @@
+.carsWrapper{
+    display: flex;
+    justify-content: space-between;
+   
+    height: auto;
+}
+
+.carItem{
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    cursor: pointer;
+}

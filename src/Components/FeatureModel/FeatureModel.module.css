@@ -1,0 +1,43 @@
+.featureModelWrapper{
+    width: 100%;
+    height: auto;
+}
+
+.titleDescriptionImgWrapper{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.titleDescriptionWrapper{
+    width: 60%;
+    height: auto; 
+}
+
+.title{
+    width: 90%;
+    height: auto;
+    min-height: 50px;
+    background-color:#fff;
+    margin-bottom: 20px;
+}
+
+.description{
+    width: 90%;
+    height: auto;
+    min-height: 100px;
+    background-color:#fff;
+}
+
+.imgCar{
+    width: 45%;
+}
+
+.imgCar img{
+    width: 100%;
+}
+
+.descriptionMotorWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+

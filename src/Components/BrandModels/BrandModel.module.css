@@ -1,0 +1,12 @@
+.brandModelWrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.brandModelItem{
+        width: 300px;
+        height: 200px;
+        background-color: #fff;
+        cursor: pointer;
+}
