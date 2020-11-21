@@ -5,7 +5,7 @@ import style from "./Cars.module.css";
 const Car = () => {
   return (
     <NavLink to='brand-model'>
-      <div className={style.carItem}></div>;
+      <div className={style.carItem}>cas</div>;
     </NavLink>
   );
 };

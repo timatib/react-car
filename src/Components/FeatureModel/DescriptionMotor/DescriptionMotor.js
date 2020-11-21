@@ -5,7 +5,12 @@ const DescriptionMotor = (props) => {
   let [descriptionMotor, setDescriptionMotor] = useState(false);
 
  let onShowDescriptionMotor = () => {
+   if(descriptionMotor){
+    setDescriptionMotor(false)
+   }else{
     setDescriptionMotor(true)
+   }
+    
   }
 
   return (
