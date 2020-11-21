@@ -21,7 +21,7 @@ const FeatureModel = () => {
         </div>
       </div>
       <div className={style.descriptionMotorWrapper}>
-        <DescriptionMotor value={'2.0'} />
+        <DescriptionMotor value={'2.1'} />
         <DescriptionMotor value={'3.0'} />
         <DescriptionMotor value={'4.0'} />
         <DescriptionMotor value={'6.3'} />
