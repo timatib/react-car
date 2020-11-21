@@ -15,7 +15,7 @@ const DescriptionMotor = (props) => {
         {!descriptionMotor ? (
           ""
         ) : (
-          <div className={style.description}>0-100</div>
+          <div className={style.description}>0-1001</div>
         )}
       </div>
     </div>
