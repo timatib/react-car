@@ -3,7 +3,7 @@ import style from "./FeatureModel.module.css";
 import e39 from ".././../Assets/images/e39.jpg";
 import DescriptionMotor from "./DescriptionMotor/DescriptionMotor";
 
-//new comment 
+//new comment develop
 
 const FeatureModel = () => {
 
@@ -21,7 +21,7 @@ const FeatureModel = () => {
         </div>
       </div>
       <div className={style.descriptionMotorWrapper}>
-        <DescriptionMotor value={'2.1'} />
+        <DescriptionMotor value={'2.3'} />
         <DescriptionMotor value={'3.0'} />
         <DescriptionMotor value={'4.0'} />
         <DescriptionMotor value={'6.3'} />
