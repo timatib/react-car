@@ -3,7 +3,7 @@ import style from "./FeatureModel.module.css";
 import e39 from ".././../Assets/images/e39.jpg";
 import DescriptionMotor from "./DescriptionMotor/DescriptionMotor";
 
-//new comment 
+//new comment develop
 
 const FeatureModel = () => {
 
