@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./FeatureModel.module.css";
 import e39 from ".././../Assets/images/e39.jpg";
 import DescriptionMotor from "./DescriptionMotor/DescriptionMotor";
@@ -7,7 +7,7 @@ import DescriptionMotor from "./DescriptionMotor/DescriptionMotor";
 
 const FeatureModel = () => {
 
-    let [descriptionMotor, setDescriptionMotor] = useState(false);
+  
 
   return (
     <div className={style.featureModelWrapper}>

@@ -4,19 +4,23 @@ import style from "./DescriptionMotor.module.css";
 const DescriptionMotor = (props) => {
   let [descriptionMotor, setDescriptionMotor] = useState(false);
 
- let onShowDescriptionMotor = () => {
-   if(descriptionMotor){
-    setDescriptionMotor(false)
-   }else{
-    setDescriptionMotor(true)
-   }
-    
-  }
+  let onShowDescriptionMotor = () => {
+    if (descriptionMotor) {
+      setDescriptionMotor(false);
+    } else {
+      setDescriptionMotor(true);
+    }
+  };
 
   return (
     <div className={style.descriptionMotorWrapper}>
-      <div onClick={onShowDescriptionMotor} className={style.descriptionMotorTittleItem}>{props.value}</div>
-      <div >
+      <div
+        onClick={onShowDescriptionMotor}
+        className={style.descriptionMotorTittleItem}
+      >
+        {props.value}
+      </div>
+      <div>
         {!descriptionMotor ? (
           ""
         ) : (
