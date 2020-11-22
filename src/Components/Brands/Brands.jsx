@@ -1,22 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getBrandsModelCarsThunk } from "../../Reducers/carPageReduser";
-import Car from "./Car";
-import style from "./Cars.module.css";
+import Car from "./Brand";
+import style from "./Brands.module.css";
 
-class Cars extends React.Component {
+class Brands extends React.Component {
 
   componentDidMount(){
     this.props.getBrandsModelCars()
   }
    
   render() {
-
     return (
       <div className={style.carsWrapper}>
-        {this.props.modelCars.map((itemCar, key) => {
+        {this.props.modelCars.map((car, key) => {
           return(
-            <Car key={key} modelCar={itemCar} />
+            <Car key={key} data={car} />
           )
         })}
       </div>
@@ -25,11 +24,11 @@ class Cars extends React.Component {
 }
 
 let mapDispatchToProps = (state) => {
-  return{
+  return {
     modelCars: state.carPage.modelCars
   }
 }
 
 export default connect(mapDispatchToProps,{
   getBrandsModelCars: getBrandsModelCarsThunk
-})(Cars);
+})(Brands);

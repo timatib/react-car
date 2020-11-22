@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+
 body, html{
     padding: 0;
     margin: 0;
-    color: cadetblue;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 li{
@@ -18,7 +20,7 @@ a{
     width: 100%;
     height: auto;
     min-height: calc(100vh - 80px) ;
-    background-image: url('../../Assets/images/bmwBlinkers.gif');
+    background-image: url('./Assets/images/bmwBlinkers.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -1,4 +1,4 @@
-.navBar{
+.navBar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,15 +10,15 @@
     border-radius: 5px;
 }
 
-.logoNavBar img{
+.logoNavBar img {
     width: 100px;
 }
 
-.searchNavBar{
+.searchNavBar {
     margin-right: 20px;
 }
 
-.searchNavBar input{
+.searchNavBar input {
     border: none;
     outline: none;
     padding: 0;

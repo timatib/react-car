@@ -19,16 +19,16 @@ const carPageReducer = (state = initialState, action) => {
   }
 };
 
-export const getBrandsModelCarsThunk = () => {          //Get car brands
+//Get car brands
+export const getBrandsModelCarsThunk = () => {          
   return async (dispatch) => {
     let data = await carsAPI.getBrands();
     dispatch(getBrandsModelCarsAC(data))
-
   };
 };
 
 let getBrandsModelCarsAC = (modelCars) => { 
-    return{
+    return {
         type: GET_BRANDS_MODEL_CAR,
         modelCars
     }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "./DescriptionMotor.module.css";
+import style from "./EngineData.module.css";
 
 const DescriptionMotor = (props) => {
   let [descriptionMotor, setDescriptionMotor] = useState(false);

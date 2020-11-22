@@ -1,14 +1,9 @@
 import React from "react";
-import style from "./FeatureModel.module.css";
+import style from "./Car.module.css";
 import e39 from ".././../Assets/images/e39.jpg";
-import DescriptionMotor from "./DescriptionMotor/DescriptionMotor";
+import DescriptionMotor from "./EngineData/EngineData";
 
-//new comment develop
-
-const FeatureModel = () => {
-
-  
-
+const Car = () => {
   return (
     <div className={style.featureModelWrapper}>
       <div className={style.titleDescriptionImgWrapper}>
@@ -30,4 +25,4 @@ const FeatureModel = () => {
   );
 };
 
-export default FeatureModel;
+export default Car;
