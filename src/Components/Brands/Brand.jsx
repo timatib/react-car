@@ -5,7 +5,7 @@ import logo from '../../Assets/images/mercedes.png';
 
 const Brand = (props) => {
   return (
-    <NavLink to="brand-model">
+    <NavLink to="models">
       <div className={style.carItem}>
         <div className={style.logoWrapper}>
           <div className={style.logo}><img src={logo}/></div>
