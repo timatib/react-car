@@ -20,7 +20,7 @@ a{
     width: 100%;
     height: auto;
     min-height: calc(100vh - 80px) ;
-    background-image: url('./Assets/images/bmwBlinkers.gif');
+    background-image: url('./assets/images/bmwBlinkers.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -29,10 +29,13 @@ a{
 
 .wrapper{
     position: relative;
-    width: 1044px;
+    width: 100%;
+    max-width: 1044px;
+    padding: 0px 20px;
     height: auto;
     min-height: calc(100vh - 80px);
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .navbarWrapper{

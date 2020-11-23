@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getBrandsModelCarsThunk } from "../../Reducers/carPageReduser";
+import { getBrandsModelCarsThunk } from "../../reducers/carPageReducer";
 import Car from "./Brand";
 import style from "./Brands.module.css";
 

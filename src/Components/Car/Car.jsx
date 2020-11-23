@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Car.module.css";
-import e39 from ".././../Assets/images/e39.jpg";
+import e39 from ".././../assets/images/e39.jpg";
 import DescriptionMotor from "./EngineData/EngineData";
 
 const Car = () => {

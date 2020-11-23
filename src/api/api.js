@@ -9,4 +9,7 @@ export const carsAPI = {
     getBrands() {
         return instance.get('brands').then(data => data.data)
     },
+    getModels(brand) {
+        return instance.get(`brands/${brand}`).then(data => data.data);
+    }
 }

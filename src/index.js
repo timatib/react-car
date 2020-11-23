@@ -3,10 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./App";
 //import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
-import store from "./Reducers/redux-store";
+import store from "./reducers/redux-store";
 import { BrowserRouter } from "react-router-dom";
-
-//test new
 
 ReactDOM.render(
   <Provider store={store}>

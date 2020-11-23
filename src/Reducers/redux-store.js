@@ -1,10 +1,12 @@
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form'
-import carPageReduser from './carPageReduser'
+import carPageReducer from './carPageReducer'
+import modelsPageReducer from './modelsPageReducer';
 
 let reducers = combineReducers({
-   carPage: carPageReduser,
+   carPage: carPageReducer,
+   modelsPage: modelsPageReducer,
 });
 
 

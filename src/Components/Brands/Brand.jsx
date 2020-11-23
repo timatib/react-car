@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Brands.module.css";
-import logo from '../../Assets/images/mercedes.png';
+import logo from '../../assets/images/mercedes.png';
 
 const Brand = (props) => {
   debugger
