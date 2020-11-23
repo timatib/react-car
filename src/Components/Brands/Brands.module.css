@@ -6,6 +6,7 @@
 .carsWrapper a {
     width: 25%;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .carItem {
@@ -17,7 +18,7 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    transition: 0.1s;
+    transition: 0.1s;  
 }
 
 .carItem:hover {
