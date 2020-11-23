@@ -4,6 +4,7 @@ import MainPage from "./Components/MainPage/MainPage";
 import NavBar from "./Components/common/NavBar/NavBar";
 import style from "./App.module.css";
 import Car from './Components/Car/Car';
+import Footer from './Components/common/Footer/Footer';
 
 const App = () => {
   return (
@@ -18,9 +19,7 @@ const App = () => {
           <Route path="/car" exact component={() => <Car />} />
         </div>
       </div>
-      <footer className={style.footer}>
-          Footer
-      </footer>
+      <Footer />
     </div>
   );
 };

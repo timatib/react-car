@@ -3,7 +3,7 @@ import style from './ContentMainPage.module.css'
 
 const ContentMainPage = () => {
   return <div className={style.contentWrapper}>
-      content blabla
+      Cars Specs
   </div>;
 };
 

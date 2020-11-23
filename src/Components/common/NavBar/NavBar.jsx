@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import style from './NavBar.module.css'
-import logo from '../../../Assets/images/logo.png';
+import logo from '../../../Assets/images/logo.svg';
 
 const NavBar = () => {
 return(
@@ -10,7 +10,7 @@ return(
            <NavLink to='/'> <img src={logo} alt="img"/></NavLink>
         </div>
         <div className={style.searchNavBar}>
-                <input type="text" placeholder='Поиск' />
+            <input type="text" placeholder='Поиск' />
         </div>
     </div>
 )
