@@ -4,7 +4,7 @@ import style from './Models.module.css';
 
 const Model = (props) => {
     return (
-        <NavLink to='/car'><div className={style.brandModelItem}>{props.data.body_title}</div></NavLink>
+        <NavLink to={'/car/' + props.data.id}><div className={style.brandModelItem}>{props.data.body_title}</div></NavLink>
     )
 }
 

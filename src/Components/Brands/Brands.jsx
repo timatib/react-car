@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getBrandsModelCarsThunk } from "../../reducers/carPageReducer";
+import { getBrandsModelCarsThunk } from "../../reducers/brandReducer";
 import Car from "./Brand";
 import style from "./Brands.module.css";
 
@@ -25,7 +25,7 @@ class Brands extends React.Component {
 
 let mapDispatchToProps = (state) => {
   return {
-    modelCars: state.carPage.modelCars
+    modelCars: state.brandPage.modelCars
   }
 }
 

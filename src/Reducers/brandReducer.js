@@ -6,7 +6,7 @@ let initialState = {
   modelCars: [],
 };
 
-const carPageReducer = (state = initialState, action) => {
+const brandReducer = (state = initialState, action) => {
   switch (action.type) {
       case GET_BRANDS_MODEL_CAR: {
           return{
@@ -35,4 +35,4 @@ let getBrandsModelCarsAC = (modelCars) => {
     
 }
 
-export default carPageReducer;
+export default brandReducer;

@@ -8,15 +8,14 @@ class Models extends React.Component {
 
     componentDidMount() {
         let brand = this.props.match.params.brand;
-        debugger
         this.props.getModels(brand);
     }
 
     render () {
         return <div className={style.brandModelWrapper}>
 
-            {this.props.models.map((key, value) => {
-                return <Model data={key}/>
+            {this.props.models.map((data, key) => {
+                return <Model key={key} data={data} />
                 
             })}
 
