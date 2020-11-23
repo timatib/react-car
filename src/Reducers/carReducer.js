@@ -20,7 +20,7 @@ const carReducer = (state = initialState, action) => {
 };
 
 //Get description car
-export const getModelDescriptionThunk = () => {          
+export const getModelDescriptionThunk = (carId) => {          
   return async (dispatch) => {
     let data = await carsAPI.getDescription();
     dispatch(getModelDescriptionAC(data))

@@ -9,6 +9,9 @@ class Brands extends React.Component {
   componentDidMount(){
     this.props.getBrandsModelCars()
   }
+
+  
+  
    
   render() {
     return (

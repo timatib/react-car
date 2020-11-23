@@ -4,20 +4,19 @@ import e39 from ".././../assets/images/e39.jpg";
 import EngineData from "./EngineData/EngineData";
 import { connect } from "react-redux";
 import { getModelDescriptionThunk } from "../../reducers/carReducer";
+import { withRouter } from "react-router-dom";
 
 class Car extends React.Component {
-  componentDidMount() {
-    this.props.getModelDescription();
-  }
 
-  componentDidUpdate(prevProps, stateProps){
-    if(prevProps != stateProps){
-      this.props.getModelDescription();
-    }
+  componentDidMount() {
+    let carId = this.props.match.params.carId ? this.props.match.params.carId : 1
+    this.props.getModelDescription(carId);
+    console.log(carId)
   }
+//this.props.match.params.carId
 
   render() {
-
+    
     let modelDescription = this.props.modelDescription;
     if(!modelDescription){
       return<div></div>
@@ -82,10 +81,11 @@ let mapDispatchToProps = (state) => {
     modelDescription: state.descriptionPage.modelDescription,
   };
 };
+let withRouterCar = withRouter(Car)
 
 export default connect(mapDispatchToProps, {
   getModelDescription: getModelDescriptionThunk,
-})(Car);
+})(withRouterCar);
 
 // {
 // "brand": "Mercedes-Benz",

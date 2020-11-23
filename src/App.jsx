@@ -15,8 +15,8 @@ const App = () => {
         </div>
         <div>
           <Route path="/" exact component={() => <MainPage />} />
-          <Route path="/brand/:brand?" component={Models} />
-          <Route path="/car/:brand?" exact component={() => <Car />} />
+          <Route path="/brand/:brand?" component={() => <Models />} />
+          <Route path="/car/:carId?"  component={() => <Car />} />
         </div>
       </div>
       <Footer />

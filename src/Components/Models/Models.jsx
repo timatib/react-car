@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import style from './Models.module.css';
 import { getModelsThunk } from "../../reducers/modelsPageReducer";
 import Model from './Model';
+import { withRouter } from 'react-router-dom';
 
 class Models extends React.Component {
 
@@ -32,7 +33,9 @@ let mapDispatchToProps = (state) => {
     }
 }
 
+let withRouterModels = withRouter(Models)
+
 export default connect(mapDispatchToProps,{
     getModels: getModelsThunk
-})(Models);
+})(withRouterModels);
 
