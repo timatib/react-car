@@ -1,6 +1,6 @@
 import { carsAPI } from "../api/api";
 
-const GET_DESCRIPTION_MODEL = 'GET_BRANDS_MODEL_CAR'
+const SET_DESCRIPTION_MODEL = 'SET_DESCRIPTION_MODEL'
 
 let initialState = {
     modelDescription: [],
@@ -8,7 +8,7 @@ let initialState = {
 
 const carReducer = (state = initialState, action) => {
   switch (action.type) {
-      case GET_DESCRIPTION_MODEL: {
+      case SET_DESCRIPTION_MODEL: {
           return{
               ...state,
               modelDescription: action.modelDescription
@@ -20,16 +20,16 @@ const carReducer = (state = initialState, action) => {
 };
 
 //Get description car
-export const getModelDescriptionThunk = (carId) => {          
+export const getModelDescriptionThunk = (carId = 2) => {          
   return async (dispatch) => {
-    let data = await carsAPI.getDescription();
-    dispatch(getModelDescriptionAC(data))
+    let data = await carsAPI.getDescription(carId);
+    dispatch(setModelDescriptionAC(data))
   };
 };
 
-let getModelDescriptionAC = (modelDescription) => { 
+let setModelDescriptionAC = (modelDescription) => { 
     return {
-        type: GET_DESCRIPTION_MODEL,
+        type: SET_DESCRIPTION_MODEL,
         modelDescription
     }
     

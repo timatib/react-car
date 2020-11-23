@@ -13,6 +13,6 @@ export const carsAPI = {
         return instance.get(`brands/${brand}`).then(data => data.data);
     },
     getDescription(carId){
-        return instance.get(`/car/${carId}`).then(data => data.data)
+        return instance.get(`car/${carId}`).then(data => data.data)
     }
 }

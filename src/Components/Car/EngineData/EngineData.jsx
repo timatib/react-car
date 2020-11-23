@@ -12,15 +12,16 @@ const DescriptionMotor = (props) => {
     }
   };
 
-let  motor = props.motor['5.5']
-console.log(props.motor['5.5'].transmission)
+let engineVolume = Object.keys(props.motor)[0];
+let motor = props.motor[engineVolume];
+
   return (
     <div className={style.descriptionMotorWrapper}>
       <div
         onClick={onShowDescriptionMotor}
         className={style.descriptionMotorTittleItem}
       >
-          <h4>объем: {Object.keys(props.motor)[0]}</h4>
+          <h4>объем: {engineVolume}</h4>
         {props.body_index}
         {props.value}
       </div>

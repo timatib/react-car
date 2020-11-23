@@ -9,14 +9,11 @@ class Brands extends React.Component {
   componentDidMount(){
     this.props.getBrandsModelCars()
   }
-
   
-  
-   
   render() {
     return (
       <div className={style.carsWrapper}>
-        {this.props.modelCars.map((car, key) => {
+        {this.props.brands.map((car, key) => {
           return(
             <Car key={key} data={car} />
           )
@@ -28,7 +25,7 @@ class Brands extends React.Component {
 
 let mapDispatchToProps = (state) => {
   return {
-    modelCars: state.brandPage.modelCars
+    brands: state.brandPage.brands
   }
 }
 

@@ -11,9 +11,9 @@ class Car extends React.Component {
   componentDidMount() {
     let carId = this.props.match.params.carId ? this.props.match.params.carId : 1
     this.props.getModelDescription(carId);
-    console.log(carId)
+    // console.log(carId)
+
   }
-//this.props.match.params.carId
 
   render() {
     

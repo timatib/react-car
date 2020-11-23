@@ -3,7 +3,7 @@ import { carsAPI } from "../api/api";
 const GET_BRANDS_MODEL_CAR = 'GET_BRANDS_MODEL_CAR'
 
 let initialState = {
-  modelCars: [],
+  brands: [],
 };
 
 const brandReducer = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const brandReducer = (state = initialState, action) => {
       case GET_BRANDS_MODEL_CAR: {
           return{
               ...state,
-              modelCars: action.modelCars
+              brands: action.brands
           }
       }
     default:
@@ -27,10 +27,10 @@ export const getBrandsModelCarsThunk = () => {
   };
 };
 
-let getBrandsModelCarsAC = (modelCars) => { 
+let getBrandsModelCarsAC = (brands) => { 
     return {
         type: GET_BRANDS_MODEL_CAR,
-        modelCars
+        brands
     }
     
 }
