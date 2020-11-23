@@ -1,9 +1,15 @@
 .carsWrapper {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.carsWrapper a {
+    width: 25%;
+    box-sizing: border-box;
 }
 
 .carItem {
-    width: 300px;
+    margin: 5px;
     height: 200px;
     background: rgba(255,255,255,0.1);
     color: white;
@@ -12,7 +18,6 @@
     display: flex;
     flex-direction: column;
     transition: 0.1s;
-    margin: 10px;
 }
 
 .carItem:hover {

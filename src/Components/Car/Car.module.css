@@ -1,19 +1,19 @@
-.featureModelWrapper{
+.featureModelWrapper {
     width: 100%;
     height: auto;
 }
 
-.titleDescriptionImgWrapper{
+.titleDescriptionImgWrapper {
     display: flex;
     margin-bottom: 50px;
 }
 
-.titleDescriptionWrapper{
+.titleDescriptionWrapper {
     width: 60%;
     height: auto; 
 }
 
-.title{
+.title {
     width: 90%;
     height: auto;
     min-height: 50px;
@@ -21,18 +21,18 @@
     margin-bottom: 20px;
 }
 
-.description{
+.description {
     width: 90%;
     height: auto;
     min-height: 100px;
     background-color:#fff;
 }
 
-.imgCar{
+.imgCar {
     width: 45%;
 }
 
-.imgCar img{
+.imgCar img {
     width: 100%;
 }
 
