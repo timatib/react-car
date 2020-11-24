@@ -1,12 +1,48 @@
-.brandModelWrapper{
+.brandModelWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer !important;
+}
+
+.brandModelItem {
+  position: relative;
+  width: auto;
+  min-width: 250px;
+  height: auto;
+  min-height: 170px;
+  border-radius: 5px;
+    background: rgba(255,255,255,0.1);
+    padding: 20px 20px;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.brandModelItem:hover{
+  background: rgba(255,255,255,0.2);
+}
+
+.brandModelTittleWrapper{
     display: flex;
-    width: 100%;
     justify-content: space-between;
 }
 
-.brandModelItem{
-    width: 300px;
-    height: 200px;
-    background: #fff;
-    cursor: pointer;
+.brandModelItem img {
+  position: absolute;
+  display: block;
+  width: 200px;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.yearModel{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.yearModel h4{
+    text-align: center;
 }

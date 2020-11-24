@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getBrandsModelCarsThunk } from "../../reducers/brandReducer";
-import Car from "./Brand";
+import Brand from "./Brand";
 import style from "./Brands.module.css";
 
 class Brands extends React.Component {
@@ -15,7 +15,7 @@ class Brands extends React.Component {
       <div className={style.carsWrapper}>
         {this.props.brands.map((car, key) => {
           return(
-            <Car key={key} data={car} />
+            <Brand key={key} data={car} />
           )
         })}
       </div>

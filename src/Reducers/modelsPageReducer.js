@@ -22,7 +22,6 @@ const modelsPageReducer = (state = initialState, action) => {
 export const getModelsThunk = (brand) => {          
   return async (dispatch) => {
     let data = await carsAPI.getModels(brand);
-    console.log(data);
     dispatch(getModelsAC(data))
   };
 };

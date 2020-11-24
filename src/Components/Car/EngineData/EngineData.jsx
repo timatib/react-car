@@ -21,29 +21,31 @@ let motor = props.motor[engineVolume];
         onClick={onShowDescriptionMotor}
         className={style.descriptionMotorTittleItem}
       >
-          <h4>объем: {engineVolume}</h4>
-        {props.body_index}
-        {props.value}
+        <div className={style.motorTransmission}>
+        <h4>Объем:&#160; {engineVolume}</h4>
+        <h4>Привод:&#160; {motor.transmission}</h4>
+        </div>
+          <h4>Топливо:&#160; {motor.engine_fuel_type}</h4>
       </div>
-      <div>
+      <div className={style.descriptionCarWrapper}>
         {!descriptionMotor ? (
           ""
         ) : (
           <div className={style.description}>
-            <h4>Трансмиссия: {motor.transmission}</h4>
-            <h4>Клиренс: {motor.engine_cylinders}</h4>
-            <h4>Топливо: {motor.engine_type}</h4>
-            <h4>Номер мотора: {motor.engine_index}</h4>
-            <h4>Топливо: {motor.engine_fuel_type}</h4>
-            <h4>Номер мотора: {motor.engine_index}</h4>
-            <h4>Сил: {motor.engine_horsepower}</h4>
-            <h4>0-100: {motor.dynamic_0_100}</h4>
-            <h4>100-200: {motor.dynamic_100_200}</h4>
-            <h4>Максимальная скорость: {motor.dynamic_max_speed}</h4>
-            <h4>Расход: {motor.fuel_consumption}</h4>
-            <h4>Коробка: {motor.gearbox}</h4>
-            <h4>Шестерня: {motor.gears_numbers}</h4>
-            <h4>Вес: {motor.weight}</h4>
+            <h4>Трансмиссия:&#160; {motor.transmission}</h4>
+            <h4>Клиренс: &#160;{motor.engine_cylinders}</h4>
+            <h4>Топливо:&#160; {motor.engine_type}</h4>
+            <h4>Номер мотора:&#160; {motor.engine_index}</h4>
+            <h4>Топливо:&#160; {motor.engine_fuel_type}</h4>
+            <h4>Номер мотора:&#160; {motor.engine_index}</h4>
+            <h4>Сил: &#160;{motor.engine_horsepower}</h4>
+            <h4>0-100: &#160;{motor.dynamic_0_100}</h4>
+            <h4>100-200:&#160; {motor.dynamic_100_200}</h4>
+            <h4>Максимальная скорость:&#160; {motor.dynamic_max_speed}</h4>
+            <h4>Расход:&#160;{motor.fuel_consumption}</h4>
+            <h4>Коробка:&#160; {motor.gearbox}</h4>
+            <h4>Шестерня:&#160; {motor.gears_numbers}</h4>
+            <h4>Вес:&#160; {motor.weight}</h4>
 
           </div>
         )}
