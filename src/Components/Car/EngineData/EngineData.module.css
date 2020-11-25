@@ -1,5 +1,7 @@
-.descriptionMotorTittleItem{
-    width: auto;
+.descriptionMotorTitleItem {
+    width: 25%;
+    box-sizing: border-box;
+    cursor: pointer;
     min-width: 200px;
     height: auto;
     background-color:#fff;
@@ -9,15 +11,17 @@
     background: rgba(255,255,255,0.1);
     padding: 10px 10px;
     color: #fff;
+    backdrop-filter: blur(20px);
     transition: 0.5s; 
+    margin: 5px;
 }
 
-.descriptionMotorTittleItem:hover{
+.descriptionMotorTittleItem:hover {
     background: rgba(255,255,255,0.2);
 }
 
 
-.description{
+.description {
     width: auto;
     min-width: 200px;
     height: auto;
@@ -29,7 +33,7 @@
 }
 
 
-.motorTransmission{
+.motorTransmission {
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;

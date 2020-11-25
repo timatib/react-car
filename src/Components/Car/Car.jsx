@@ -5,6 +5,7 @@ import EngineData from "./EngineData/EngineData";
 import { connect } from "react-redux";
 import { getModelDescriptionThunk } from "../../reducers/carReducer";
 import { withRouter } from "react-router-dom";
+import EngineDataTable from "./EngineData/EngineDataTable";
 
 class Car extends React.Component {
   componentDidMount() {
@@ -12,14 +13,13 @@ class Car extends React.Component {
       ? this.props.match.params.carId
       : 1;
     this.props.getModelDescription(carId);
-    // console.log(carId)
   }
 
   render() {
     let modelDescription = this.props.modelDescription;
-    if (!modelDescription) {
-      return <div></div>;
-    }
+    
+    console.log(modelDescription);
+
     return (
       <div className={style.featureModelWrapper}>
         <div className={style.titleDescriptionImgWrapper}>
@@ -54,6 +54,7 @@ class Car extends React.Component {
               </h4>
             </div>
           </div>
+          
           <div className={style.imgCar}>
             {modelDescription.image ? (
               <img src={modelDescription.image} alt="img" />
@@ -62,15 +63,13 @@ class Car extends React.Component {
             )}
           </div>
         </div>
+
         <div className={style.descriptionMotorWrapper}>
-          {this.props.modelDescription.engines ? (
-            this.props.modelDescription.engines.map((motor, key) => {
-              return <EngineData key={key} motor={motor} />;
-            })
-          ) : (
-            <div></div>
-          )}
+          {this.props.modelDescription.engines && this.props.modelDescription.engines.map((engine, key) => {
+              return <EngineData data={engine} key={key}/>;
+          })}
         </div>
+
       </div>
     );
   }

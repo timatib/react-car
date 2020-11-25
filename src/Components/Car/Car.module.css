@@ -41,14 +41,22 @@
     width: 100%;
 }
 
-.descriptionMotorWrapper{
+.descriptionMotorWrapper {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.modelYear{
+.modelYear {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
+.descriptionEngineTable {
+    border: 0;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 20px;
+}
