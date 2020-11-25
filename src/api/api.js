@@ -2,8 +2,8 @@ import * as axios from 'axios'
 
 const instance = axios.create({
     withCredentials: false, 
-    //baseURL: 'http://193.124.18.152/api/' 
-    baseURL: 'http://127.0.0.1:8000/api/' 
+    baseURL: 'http://193.124.18.152/api/' 
+    ///baseURL: 'http://127.0.0.1:8000/api/' 
 });
 
 export const carsAPI = {

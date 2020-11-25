@@ -9,7 +9,7 @@ const DescriptionMotor = (props) => {
   const onShowDescriptionMotor = () => {
     descriptionMotor ? setDescriptionMotor(false) : setDescriptionMotor(true);
   };
-
+console.log(engineData)
   return (
     <div className={style.descriptionMotorWrapper}>
       <div onClick={onShowDescriptionMotor} className={style.descriptionMotorTitleItem}>

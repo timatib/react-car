@@ -69,7 +69,7 @@ class Car extends React.Component {
               return <EngineData data={engine} key={key}/>;
           })}
         </div>
-
+        <EngineDataTable data={this.props.modelDescription.engines} />
       </div>
     );
   }
