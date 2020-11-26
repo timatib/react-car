@@ -1,0 +1,27 @@
+.enginesCards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    backdrop-filter: blur(20px);
+}
+
+.enginesCards > div {
+    width: 25%;
+    background: rgba(255,255,255,0.1);
+    margin: 5px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.enginesCards > div.selected {
+    background: white;
+    color: black;
+}
+
+.enginesCards > div.selected > .engineVolume {
+    color: black;
+}
+.enginesCards > div > .engineVolume {
+    font-size: 2rem;
+    color: white;
+}

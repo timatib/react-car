@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Car.module.css";
 import defaultCar from ".././../assets/images/gost.png";
 import EngineData from "./EngineData/EngineData";
@@ -6,13 +6,26 @@ import { connect } from "react-redux";
 import { getModelDescriptionThunk } from "../../reducers/carReducer";
 import { withRouter } from "react-router-dom";
 import EngineDataTable from "./EngineData/EngineDataTable";
+import EnginesCards from "./EnginesCards";
 
 class Car extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentOpenedEngineDataNumber: 0
+    };
+  }
+
   componentDidMount() {
     let carId = this.props.match.params.carId
-      ? this.props.match.params.carId
+      ? this.props.match.params.carId 
       : 1;
-    this.props.getModelDescription(carId);
+    this.props.getModelDescription(carId); 
+  }
+
+  openEngineDataTable = (key) => {
+    this.setState({ currentOpenedEngineDataNumber: key})
   }
 
   render() {
@@ -64,12 +77,10 @@ class Car extends React.Component {
           </div>
         </div>
 
-        <div className={style.descriptionMotorWrapper}>
-          {this.props.modelDescription.engines && this.props.modelDescription.engines.map((engine, key) => {
-              return <EngineData data={engine} key={key}/>;
-          })}
-        </div>
-        <EngineDataTable data={this.props.modelDescription.engines} />
+        <EnginesCards currentEngineKey={this.state.currentOpenedEngineDataNumber} data={modelDescription.engines} openEngineDataTable={this.openEngineDataTable} />   
+        <EngineDataTable currentEngineKey={this.state.currentOpenedEngineDataNumber} data={modelDescription.engines} currentOpenedEngineDataId={this.currentOpenedEngineDataId} />   
+      
+        
       </div>
     );
   }

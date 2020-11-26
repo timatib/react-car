@@ -1,3 +1,16 @@
-.carDataTableStyle{
+.carDataTableStyle {
+    width: 100%;
     color:#fff;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+}
+
+.carDataTableStyle tr {
+    height: 60px;
+}
+
+.carDataTableStyle tr:nth-child(even) {
+    background: rgba(2552,255,255,0.1);
 }
