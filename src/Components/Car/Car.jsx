@@ -9,28 +9,29 @@ import EngineDataTable from "./EngineData/EngineDataTable";
 import EnginesCards from "./EnginesCards";
 
 class Car extends React.Component {
-  
   constructor(props) {
     super(props);
     this.state = {
-      currentOpenedEngineDataNumber: 0
+      currentOpenedEngineDataNumber: 0,
     };
   }
 
   componentDidMount() {
     let carId = this.props.match.params.carId
-      ? this.props.match.params.carId 
+      ? this.props.match.params.carId
       : 1;
-    this.props.getModelDescription(carId); 
+    this.props.getModelDescription(carId);
   }
 
+  
+
   openEngineDataTable = (key) => {
-    this.setState({ currentOpenedEngineDataNumber: key})
-  }
+    this.setState({ currentOpenedEngineDataNumber: key });
+  };
 
   render() {
     let modelDescription = this.props.modelDescription;
-    
+
     console.log(modelDescription);
 
     return (
@@ -56,9 +57,11 @@ class Car extends React.Component {
                   <div>
                     <h4>
                       Коробка: &#160;
-                      {modelDescription.gearbox.gearbox_name}<br></br> Тип: &#160;
-                      {modelDescription.gearbox.gearbox_type}<br></br> Количество
-                      скоростей: &#160;{modelDescription.gearbox.gears_number}
+                      {modelDescription.gearbox.gearbox_name}
+                      <br></br> Тип: &#160;
+                      {modelDescription.gearbox.gearbox_type}
+                      <br></br> Количество скоростей: &#160;
+                      {modelDescription.gearbox.gears_number}
                     </h4>
                   </div>
                 ) : (
@@ -67,7 +70,7 @@ class Car extends React.Component {
               </h4>
             </div>
           </div>
-          
+
           <div className={style.imgCar}>
             {modelDescription.image ? (
               <img src={modelDescription.image} alt="img" />
@@ -77,10 +80,16 @@ class Car extends React.Component {
           </div>
         </div>
 
-        <EnginesCards currentEngineKey={this.state.currentOpenedEngineDataNumber} data={modelDescription.engines} openEngineDataTable={this.openEngineDataTable} />   
-        <EngineDataTable currentEngineKey={this.state.currentOpenedEngineDataNumber} data={modelDescription.engines} currentOpenedEngineDataId={this.currentOpenedEngineDataId} />   
-      
-        
+        <EnginesCards
+          currentEngineKey={this.state.currentOpenedEngineDataNumber}
+          data={modelDescription.engines}
+          openEngineDataTable={this.openEngineDataTable}
+        />
+        <EngineDataTable
+          currentEngineKey={this.state.currentOpenedEngineDataNumber}
+          data={modelDescription.engines}
+          currentOpenedEngineDataId={this.currentOpenedEngineDataId}
+        />
       </div>
     );
   }
