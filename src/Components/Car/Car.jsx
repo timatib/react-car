@@ -13,6 +13,7 @@ class Car extends React.Component {
     super(props);
     this.state = {
       currentOpenedEngineDataNumber: 0,
+      
     };
   }
 
@@ -31,8 +32,6 @@ class Car extends React.Component {
 
   render() {
     let modelDescription = this.props.modelDescription;
-
-    console.log(modelDescription);
 
     return (
       <div className={style.featureModelWrapper}>
@@ -88,7 +87,7 @@ class Car extends React.Component {
         <EngineDataTable
           currentEngineKey={this.state.currentOpenedEngineDataNumber}
           data={modelDescription.engines}
-          currentOpenedEngineDataId={this.currentOpenedEngineDataId}
+         
         />
       </div>
     );
@@ -106,36 +105,3 @@ export default connect(mapDispatchToProps, {
   getModelDescription: getModelDescriptionThunk,
 })(withRouterCar);
 
-// {
-// "brand": "Mercedes-Benz",
-// "body_title": "E63",
-// "body_index": "W212",
-// "year_production_start": "2013",
-// "year_production_end": "2015",
-// "image": null,
-// "engines": [
-// {
-// "5.5": {
-// "transmission": "AWD",
-// "engine_cylinders": 8,
-// "engine_type": "V",
-// "engine_index": "M157",
-// "engine_fuel_type": "benzin",
-// "engine_horsepower": 585,
-// "engine_boost_type": "Turbo",
-// "dynamic_0-100": 3.6,
-// "dynamic_100-200": 8.5,
-// "dynamic_max_speed": 330,
-// "fuel_consumption": 15.2,
-// "gearbox": "Automatic",
-// "gears_numbers": 7,
-// "weight": 1950
-// }
-// }
-// ],
-// "gearbox": {
-// "gearbox_name": "7G-Tronic 722.9",
-// "gearbox_type": "Automatic",
-// "gears_number": "7"
-// }
-// }

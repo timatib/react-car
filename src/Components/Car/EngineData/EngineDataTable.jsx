@@ -27,13 +27,12 @@ class EngineDataTable extends React.Component {
           this.props.data.map((value, key) => {
             if (key == this.props.currentEngineKey) {
               return (
-                <div>
+                <div key={key}>
                    
                     {this.state.isPreloaderActive &&  <Preloader />  }
                   <table
                     cellPadding="5"
-                    className={`${style.carDataTableStyle}`}
-                    key={key}
+                    className={style.carDataTableStyle} 
                   >
                     <tbody>
                       <tr>
