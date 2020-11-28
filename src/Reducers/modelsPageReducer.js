@@ -1,9 +1,11 @@
 import { carsAPI } from "../api/api";
 
 const GET_MODELS = 'GET_MODELS'
+const GET_BRANDS = 'GET_BRANDS'
 
 let initialState = {
   models: [],
+  brand: ''
 };
 
 const modelsPageReducer = (state = initialState, action) => {
@@ -13,6 +15,12 @@ const modelsPageReducer = (state = initialState, action) => {
               ...state,
               models: action.data
           }
+      }
+      case GET_BRANDS: {
+        return{
+          ...state,
+          brand: action.brand
+        }
       }
     default:
       return state;
@@ -31,6 +39,13 @@ let getModelsAC = (data) => {
         type: GET_MODELS,
         data
     }
+}
+
+export let getBrandsAC = (brand) => {
+  return{
+    type: GET_BRANDS,
+    brand
+  }
 }
 
 export default modelsPageReducer;

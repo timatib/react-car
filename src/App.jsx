@@ -5,6 +5,7 @@ import NavBar from "./components/common/NavBar/NavBar";
 import style from "./App.module.css";
 import Car from './components/Car/Car';
 import Footer from './components/common/Footer/Footer';
+import BreadCrumbs from "./components/common/BreadCrumbs/BreadCrumbs";
 
 const App = () => {
   return (
@@ -12,6 +13,9 @@ const App = () => {
       <div className={style.wrapper}>
         <div className={style.navbarWrapper}>
           <NavBar />
+        </div>
+        <div className={style.navigator}>
+          <BreadCrumbs />
         </div>
         <div>
           <Route path="/" exact component={() => <MainPage />} />

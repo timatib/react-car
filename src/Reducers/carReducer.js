@@ -1,9 +1,11 @@
 import { carsAPI } from "../api/api";
 
 const SET_DESCRIPTION_MODEL = 'SET_DESCRIPTION_MODEL'
+const SET_NAME_DISCRIPTION_MODEL = 'SET_NAME_DISCRIPTION_MODEL'
 
 let initialState = {
     modelDescription: [],
+    bodyTittle: ''
 };
 
 const carReducer = (state = initialState, action) => {
@@ -13,6 +15,12 @@ const carReducer = (state = initialState, action) => {
               ...state,
               modelDescription: action.modelDescription
           }
+      }
+      case SET_NAME_DISCRIPTION_MODEL: {
+        return{
+          ...state,
+          bodyTittle: action.bodyTittle
+        }
       }
     default:
       return state;
@@ -33,6 +41,13 @@ let setModelDescriptionAC = (modelDescription) => {
         modelDescription
     }
     
+}
+
+export let setNameDiscriptionModelAC = (bodyTittle) => {
+  return{
+    type: SET_NAME_DISCRIPTION_MODEL,
+    bodyTittle
+  }
 }
 
 export default carReducer;

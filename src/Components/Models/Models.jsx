@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import style from './Models.module.css';
-import { getModelsThunk } from "../../reducers/modelsPageReducer";
+import { getBrandsAC, getModelsThunk } from "../../reducers/modelsPageReducer";
 import Model from './Model';
 import { withRouter } from 'react-router-dom';
 
@@ -10,6 +10,7 @@ class Models extends React.Component {
     componentDidMount() {
         let brand = this.props.match.params.brand;
         this.props.getModels(brand);
+        this.props.getBrands(brand)
     }
 
     render () {
@@ -36,6 +37,7 @@ let mapDispatchToProps = (state) => {
 let withRouterModels = withRouter(Models)
 
 export default connect(mapDispatchToProps,{
-    getModels: getModelsThunk
+    getModels: getModelsThunk,
+    getBrands: getBrandsAC
 })(withRouterModels);
 

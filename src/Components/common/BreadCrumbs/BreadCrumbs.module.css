@@ -1,0 +1,16 @@
+.breadCrumbsWrapper ul{
+    
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.active{
+    font-weight: bold;
+}
+
+
+
+.breadCrumbsWrapper ul a{
+    color: #fff;
+}
