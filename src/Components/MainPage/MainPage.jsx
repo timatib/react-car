@@ -6,15 +6,13 @@ import style from "./MainPage.module.css";
 
 const MainPage = () => {
   return (
-    <div>
-      <NavLink to='/'>
+    <div >
         <div>
           <ContentMainPage />
         </div>
         <div className={style.carsWrapper}>
           <Brands />
         </div>
-      </NavLink>
     </div>
   );
 };
