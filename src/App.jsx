@@ -5,7 +5,7 @@ import NavBar from "./components/common/NavBar/NavBar";
 import style from "./App.module.css";
 import Car from './components/Car/Car';
 import Footer from './components/common/Footer/Footer';
-import BreadCrumbs from "./components/common/BreadCrumbs/BreadCrumbs";
+import BreadcrumbsContainer from "./components/common/Breadcrumbs/BreadcrumbsContainer";
 
 const App = () => {
   return (
@@ -15,12 +15,12 @@ const App = () => {
           <NavBar />
         </div>
         <div className={style.navigator}>
-          <BreadCrumbs />
+          <BreadcrumbsContainer />
         </div>
         <div>
+          <Route path="/brand/:brand" exact component={() => <Models />} />
+          <Route path="/brand/:brand/:carId" component={() => <Car />} />  
           <Route path="/" exact component={() => <MainPage />} />
-          <Route path="/brand/:brand?" component={() => <Models />} />
-          <Route path="/car/:carId?"  component={() => <Car />} />
         </div>
       </div>
       <Footer />

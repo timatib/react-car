@@ -12,20 +12,17 @@ class Car extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentOpenedEngineDataNumber: 0,
-      
+      currentOpenedEngineDataNumber: 0
     };
   }
 
   componentDidMount() {
+    let brand = this.props.match.params.brand
     let carId = this.props.match.params.carId
       ? this.props.match.params.carId
       : 1;
-    this.props.getModelDescription(carId);
-    this.props.setNameDiscriptionModel(this.props.modelDescription.body_index)
+    this.props.getModelDescription(brand, carId);
   }
-
-  
 
   openEngineDataTable = (key) => {
     this.setState({ currentOpenedEngineDataNumber: key });

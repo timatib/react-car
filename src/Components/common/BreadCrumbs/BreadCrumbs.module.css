@@ -1,16 +1,21 @@
-.breadCrumbsWrapper ul{
-    
-    display: flex;
-    margin: 0;
-    padding: 0;
+.breadcrumbsWrapper {
+    display: inline;
 }
 
-.active{
-    font-weight: bold;
+.breadcrumbsWrapper > a:not(:last-child)::after {
+    content: ' / ';
+    color: white;
 }
 
+.breadcrumbsWrapper > a  > span {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
 
-
-.breadCrumbsWrapper ul a{
-    color: #fff;
+.breadcrumbsWrapper > a > span.disabled {
+    cursor: default;
+    color: rgba(255,255,255,0.5);
 }

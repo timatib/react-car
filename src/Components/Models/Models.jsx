@@ -7,17 +7,26 @@ import { withRouter } from 'react-router-dom';
 
 class Models extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+          url: ''
+        };
+      }
+    
+
     componentDidMount() {
         let brand = this.props.match.params.brand;
         this.props.getModels(brand);
-        this.props.getBrands(brand)
+        this.props.getBrands(brand);
+        this.setState({url: this.props.location.pathname});
     }
 
     render () {
         return <div className={style.brandModelWrapper}>
 
             {this.props.models.map((data, key) => {
-                return <Model key={key} data={data} />
+                return <Model key={key} data={data} url={this.state.url}/>
                 
             })}
 

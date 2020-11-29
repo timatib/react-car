@@ -5,9 +5,10 @@ import defaultCar from "../../assets/images/gost.png";
 
 const Model = (props) => {
   let modelDesctiption = props.data;
+
   return (
     <div>
-      <NavLink to={"/car/" + props.data.id}>
+      <NavLink to={props.url + '/' + props.data.id}>
         <div className={style.brandModelItem}>
           <div className={style.brandModelTittleWrapper}>
             <h4>Модель:&#160; {modelDesctiption.body_title}</h4>

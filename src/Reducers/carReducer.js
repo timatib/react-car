@@ -5,7 +5,7 @@ const SET_NAME_DISCRIPTION_MODEL = 'SET_NAME_DISCRIPTION_MODEL'
 
 let initialState = {
     modelDescription: [],
-    bodyTittle: ''
+    bodyTitle: ''
 };
 
 const carReducer = (state = initialState, action) => {
@@ -19,7 +19,7 @@ const carReducer = (state = initialState, action) => {
       case SET_NAME_DISCRIPTION_MODEL: {
         return{
           ...state,
-          bodyTittle: action.bodyTittle
+          bodyTitle: action.bodyTitle
         }
       }
     default:
@@ -28,9 +28,9 @@ const carReducer = (state = initialState, action) => {
 };
 
 //Get description car
-export const getModelDescriptionThunk = (carId = 2) => {          
+export const getModelDescriptionThunk = (brand, carId) => {          
   return async (dispatch) => {
-    let data = await carsAPI.getDescription(carId);
+    let data = await carsAPI.getDescription(brand, carId);
     dispatch(setModelDescriptionAC(data))
   };
 };
@@ -43,10 +43,10 @@ let setModelDescriptionAC = (modelDescription) => {
     
 }
 
-export let setNameDiscriptionModelAC = (bodyTittle) => {
+export let setNameDiscriptionModelAC = (bodyTitle) => {
   return{
     type: SET_NAME_DISCRIPTION_MODEL,
-    bodyTittle
+    bodyTitle
   }
 }
 
