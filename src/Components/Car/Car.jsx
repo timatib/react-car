@@ -4,6 +4,7 @@ import defaultCar from ".././../assets/images/gost.png";
 import EngineData from "./EngineData/EngineData";
 import { connect } from "react-redux";
 import { getModelDescriptionThunk, setNameDiscriptionModelAC } from "../../reducers/carReducer";
+import { setModelForBreadcrumbs } from "../../reducers/modelsPageReducer"
 import { withRouter } from "react-router-dom";
 import EngineDataTable from "./EngineData/EngineDataTable";
 import EnginesCards from "./EnginesCards";
@@ -22,6 +23,14 @@ class Car extends React.Component {
       ? this.props.match.params.carId
       : 1;
     this.props.getModelDescription(brand, carId);
+
+    this.props.setModelForBreadcrumbs(this.props.modelDescription.body_index);
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps != this.props) {
+      this.props.setModelForBreadcrumbs(this.props.modelDescription.body_index);
+    }
   }
 
   openEngineDataTable = (key) => {
@@ -102,6 +111,7 @@ let withRouterCar = withRouter(Car);
 
 export default connect(mapDispatchToProps, {
   getModelDescription: getModelDescriptionThunk,
+  setModelForBreadcrumbs: setModelForBreadcrumbs
   //setNameDiscriptionModel: setNameDiscriptionModelAC
 })(withRouterCar);
 
