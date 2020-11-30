@@ -102,6 +102,6 @@ let withRouterCar = withRouter(Car);
 
 export default connect(mapDispatchToProps, {
   getModelDescription: getModelDescriptionThunk,
-  setNameDiscriptionModel: setNameDiscriptionModelAC
+  //setNameDiscriptionModel: setNameDiscriptionModelAC
 })(withRouterCar);
 

@@ -8,7 +8,7 @@ const Model = (props) => {
 
   return (
     <div>
-      <NavLink to={props.url + '/' + props.data.id}>
+      <NavLink to={props.url + '/' + props.data.id} onClick={() => props.setModelName(modelDesctiption.body_index)}>
         <div className={style.brandModelItem}>
           <div className={style.brandModelTittleWrapper}>
             <h4>Модель:&#160; {modelDesctiption.body_title}</h4>

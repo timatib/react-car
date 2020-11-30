@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import style from './Models.module.css';
-import { getBrandsAC, getModelsThunk } from "../../reducers/modelsPageReducer";
+import { getBrandsAC, getModelsThunk, setModelForBreadcrumbs } from "../../reducers/modelsPageReducer";
 import Model from './Model';
 import { withRouter } from 'react-router-dom';
 
@@ -12,9 +12,9 @@ class Models extends React.Component {
         this.state = {
           url: ''
         };
-      }
+    }
     
-
+    
     componentDidMount() {
         let brand = this.props.match.params.brand;
         this.props.getModels(brand);
@@ -22,17 +22,15 @@ class Models extends React.Component {
         this.setState({url: this.props.location.pathname});
     }
 
+    setModelName() {
+        alert(1);
+    }
+
     render () {
         return <div className={style.brandModelWrapper}>
-
             {this.props.models.map((data, key) => {
-                return <Model key={key} data={data} url={this.state.url}/>
-                
+                return <Model key={key} data={data} setModelName={this.props.setModelForBreadcrumbs} url={this.state.url}/>
             })}
-
-            {/*             
-            <NavLink to='/car'><div className={style.brandModelItem}>e39</div></NavLink>
-            <NavLink to='/car'><div className={style.brandModelItem}>e34</div></NavLink> */}
         </div>
     }
 }
@@ -47,6 +45,7 @@ let withRouterModels = withRouter(Models)
 
 export default connect(mapDispatchToProps,{
     getModels: getModelsThunk,
-    getBrands: getBrandsAC
+    getBrands: getBrandsAC,
+    setModelForBreadcrumbs: setModelForBreadcrumbs
 })(withRouterModels);
 

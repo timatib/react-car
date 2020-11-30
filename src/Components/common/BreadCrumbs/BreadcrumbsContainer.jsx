@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { NavLink, withRouter } from "react-router-dom";
-import { getBrandsModelCarsThunk } from "../../../reducers/brandReducer";
+import { withRouter } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
-import style from "./Breadcrumbs.module.css";
 
 class BreadcrumbsContainer extends React.Component {
 
@@ -16,12 +14,7 @@ class BreadcrumbsContainer extends React.Component {
   }
 
   componentDidMount() {
-   
     this.refreshUrlInState();
-
-    setTimeout(() => {
-      console.log(this.props);
-    }, 1000)
   }
 
   componentDidUpdate(prevProps) {
@@ -71,8 +64,7 @@ let withBreadcrumbs = withRouter(BreadcrumbsContainer);
 
 let mapStateToProps = (state) => {
   return {
-    brand: state.modelsPage.brand,
-    bodyTitle: state.descriptionPage.modelDescription.body_index,
+    bodyTitle: state.modelsPage.modelForBreadcrumbs
   };
 };
 
