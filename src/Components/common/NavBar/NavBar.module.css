@@ -1,6 +1,7 @@
 .navbarWrapper {
     width: 100%;
     height: auto;
+    position: relative;
 }
 
 .navbar{
@@ -44,16 +45,21 @@
 }
 
 .navSearch{
+    position: absolute;
     display: none;
 }
 
 .navSearch.active{
     display: block;
     border-top: dashed;
-    height: 300px;
-    background: rgba(255,255,255,0.1);
-    padding: 20px 30px;
+    width: 100%;
+    height: auto;
+    background: #1A1A1A;
     z-index: 100;
-    border-radius: 0px 0px 5px 5px;
+    border-radius: 5px;
 }
 
+
+.searchContent{
+    padding: 30px 20px;
+}

@@ -8,13 +8,15 @@ const NavBar = (props) => {
 
   let onSubmitFrom = (e) => {
     if (e.key == "Enter") {
-      setInputValue(true);
+        setInputValue(true);
     }
   };
 
   let onСharacterЕracking = ({ target: { value } }) => {
     if(value == ''){
         setInputValue(false);
+    } else{
+        setInputValue(true);
     }
   }
 
@@ -32,7 +34,10 @@ const NavBar = (props) => {
         </div>
       </div>
       <div className={!inputValue ? style.navSearch : `${style.navSearch} ${style.active}`}>
-            Рузультат поиска:
+          <div className={style.searchContent}>
+            Ничего не найдено
+          </div>
+            
       </div>
     </div>
   );
