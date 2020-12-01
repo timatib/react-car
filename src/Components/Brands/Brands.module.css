@@ -10,6 +10,8 @@
 }
 
 .carItem {
+    width: auto;
+    min-width: 150px;
     margin: 5px;
     height: 200px;
     background: rgba(255,255,255,0.1);
@@ -18,7 +20,10 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    transition: 0.1s;  
+    transition: 0.1s; 
+    padding: 10px; 
+    
+
 }
 
 .carItem:hover {
