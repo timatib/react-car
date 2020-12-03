@@ -11,9 +11,6 @@
   margin: 3px;
 }
 
-.brandModelWrapper > div:nth-child(2) {
-  padding: 5px;
-}
 
 .brandModelWrapper > div:hover {
   background: rgba(255,255,255,0.2);
