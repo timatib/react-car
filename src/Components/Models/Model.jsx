@@ -10,20 +10,22 @@ const Model = (props) => {
     <div>
       <NavLink to={props.url + '/' + props.data.id} onClick={() => props.setModelName(modelDesctiption.body_index)}>
         <div className={style.brandModelItem}>
-          <div className={style.brandModelTittleWrapper}>
-            <h4>Модель:&#160; {modelDesctiption.body_title}</h4>
-            <h4>Кузов:&#160;{modelDesctiption.body_index}</h4>
+          <div className={style.left}>
+            <div className={style.info}>
+              <div className={style.title}>
+                {modelDesctiption.body_title} {modelDesctiption.body_index}
+              </div>
+              <div className={style.year}>
+                {modelDesctiption.year_production_start} -{" "}
+                {modelDesctiption.year_production_end}
+              </div>
+            </div>
           </div>
-          <div className={style.yearModel}>
-            <h4>
-              {modelDesctiption.year_production_start} -{" "}
-              {modelDesctiption.year_production_end}
-            </h4>
+          <div className={style.right}>
+            <div>
+              <img src={modelDesctiption.image ? modelDesctiption.image : defaultCar} className={style.carImage} alt="img"/>
+            </div>
           </div>
-          <img
-            src={modelDesctiption.image ? modelDesctiption.image : defaultCar}
-            alt="img"
-          />
         </div>
       </NavLink>
     </div>

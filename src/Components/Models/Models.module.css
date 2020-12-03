@@ -1,24 +1,92 @@
 .brandModelWrapper {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  cursor: pointer !important;
+  flex-wrap: wrap;
 }
 
-.brandModelItem {
+.brandModelWrapper > div {
+  width: 32.3%;
+  min-height: 170px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.brandModelWrapper > div:nth-child(2) {
+  padding: 5px;
+}
+
+.brandModelWrapper > div:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+
+.brandModelWrapper > div > a > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.brandModelWrapper > div > a > div > .left {
+  flex: 2;
+  height: inherit;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.brandModelWrapper > div > a > div > .left > .info {
+  width: 100%;
+  height: 100%;
   position: relative;
-  width: auto;
+}
+
+.brandModelWrapper > div > a > div > .left > .info > .title {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.brandModelWrapper > div > a > div > .left > .info > .year {
+  font-size: 0.9rem;
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+
+.brandModelWrapper > div > a > div > .right {
+  flex: 3;
+  height: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.brandModelWrapper > div > a > div > .right > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: -20px;
+}
+
+.brandModelWrapper > div > a > div > .right > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 13px rgba(255,255,255,0.2));
+}
+
+
+/* .brandModelItem {
+  position: relative;
+  width: 33%;
   min-width: 250px;
   height: auto;
   min-height: 170px;
   border-radius: 5px;
-    background: rgba(255,255,255,0.1);
-    padding: 20px 20px;
-    color: #fff;
-    transition: 0.5s;
-}
+  background: rgba(255,255,255,0.1);
+  padding: 20px 20px;
+  color: #fff;
+  transition: 0.5s;
+} */
 
-.brandModelItem:hover{
+/* .brandModelItem:hover{
   background: rgba(255,255,255,0.2);
 }
 
@@ -45,4 +113,4 @@
 
 .yearModel h4{
     text-align: center;
-}
+} */
