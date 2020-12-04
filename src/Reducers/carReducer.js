@@ -2,6 +2,7 @@ import { carsAPI } from "../api/api";
 
 const SET_DESCRIPTION_MODEL = 'SET_DESCRIPTION_MODEL'
 const SET_NAME_DISCRIPTION_MODEL = 'SET_NAME_DISCRIPTION_MODEL'
+const RESET_STATE = 'RESET_STATE'
 
 let initialState = {
     modelDescription: [],
@@ -21,6 +22,9 @@ const carReducer = (state = initialState, action) => {
           ...state,
           bodyTitle: action.bodyTitle
         }
+      }
+      case RESET_STATE: {
+        return initialState
       }
     default:
       return state;
@@ -42,6 +46,8 @@ let setModelDescriptionAC = (modelDescription) => {
     }
     
 }
+
+export const resetStateData = () => ({type: RESET_STATE})
 
 export let setNameDiscriptionModelAC = (bodyTitle) => {
   return{

@@ -18,9 +18,6 @@ class BreadcrumbsContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // if(prevProps.location.pathname != this.props.location.pathname) {
-    //   this.refreshUrlInState();
-    // } 
     if(prevProps != this.props) {
       this.refreshUrlInState();
     }

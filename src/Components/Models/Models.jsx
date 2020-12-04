@@ -1,32 +1,38 @@
 import React from 'react';
 import { connect } from "react-redux";
 import style from './Models.module.css';
-import { getBrandsAC, getModelsThunk, setModelForBreadcrumbs } from "../../reducers/modelsPageReducer";
+import { getBrandsAC, getModelsThunk, setModelForBreadcrumbs, resetStateData } from "../../reducers/modelsPageReducer";
 import Model from './Model';
 import { withRouter } from 'react-router-dom';
+import Preloader from '../common/Preloader/Preloader';
 
 class Models extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          url: ''
+          url: '',
+          isDataLoading: true
         };
     }
     
-    
     componentDidMount() {
         let brand = this.props.match.params.brand;
-        this.props.getModels(brand);
+        this.props.getModels(brand).then(() => {
+            this.setState({isDataLoading: false})
+        })
         this.props.getBrands(brand);
-        this.setState({url: this.props.location.pathname});
+        this.setState({url: this.props.location.pathname});  
     }
 
-    setModelName() {
-        alert(1);
+    componentWillUnmount() {
+        this.props.resetState();
     }
 
     render () {
+        if(this.state.isDataLoading) {
+            return <Preloader />
+        }
         return <div className={style.brandModelWrapper}>
             {this.props.models.map((data, key) => {
                 return <Model key={key} data={data} setModelName={this.props.setModelForBreadcrumbs} url={this.state.url}/>
@@ -43,9 +49,9 @@ let mapDispatchToProps = (state) => {
 
 let withRouterModels = withRouter(Models)
 
-export default connect(mapDispatchToProps,{
+export default connect(mapDispatchToProps, { 
     getModels: getModelsThunk,
     getBrands: getBrandsAC,
-    setModelForBreadcrumbs: setModelForBreadcrumbs
+    setModelForBreadcrumbs: setModelForBreadcrumbs,
+    resetState: resetStateData
 })(withRouterModels);
-

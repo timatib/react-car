@@ -3,17 +3,19 @@ import style from "./Car.module.css";
 import defaultCar from ".././../assets/images/gost.png";
 import EngineData from "./EngineData/EngineData";
 import { connect } from "react-redux";
-import { getModelDescriptionThunk, setNameDiscriptionModelAC } from "../../reducers/carReducer";
+import { getModelDescriptionThunk, setNameDiscriptionModelAC, resetStateData } from "../../reducers/carReducer";
 import { setModelForBreadcrumbs } from "../../reducers/modelsPageReducer"
 import { withRouter } from "react-router-dom";
 import EngineDataTable from "./EngineData/EngineDataTable";
 import EnginesCards from "./EnginesCards";
+import Preloader from '../common/Preloader/Preloader';
 
 class Car extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentOpenedEngineDataNumber: 0
+      currentOpenedEngineDataNumber: 0,
+      isDataLoading: true
     };
   }
 
@@ -22,7 +24,9 @@ class Car extends React.Component {
     let carId = this.props.match.params.carId
       ? this.props.match.params.carId
       : 1;
-    this.props.getModelDescription(brand, carId);
+    this.props.getModelDescription(brand, carId).then(() => {
+      this.setState({isDataLoading: false})
+    })
 
     this.props.setModelForBreadcrumbs(this.props.modelDescription.body_index);
   }
@@ -33,11 +37,20 @@ class Car extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.resetState();
+  }
+
+
   openEngineDataTable = (key) => {
     this.setState({ currentOpenedEngineDataNumber: key });
   };
 
   render() {
+    if(this.state.isDataLoading) {
+        return <Preloader />
+    }
+
     let modelDescription = this.props.modelDescription;
 
     return (
@@ -111,7 +124,7 @@ let withRouterCar = withRouter(Car);
 
 export default connect(mapDispatchToProps, {
   getModelDescription: getModelDescriptionThunk,
-  setModelForBreadcrumbs: setModelForBreadcrumbs
-  //setNameDiscriptionModel: setNameDiscriptionModelAC
+  setModelForBreadcrumbs: setModelForBreadcrumbs,
+  resetState: resetStateData
 })(withRouterCar);
 

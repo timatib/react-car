@@ -3,6 +3,7 @@ import { carsAPI } from "../api/api";
 const GET_MODELS = 'GET_MODELS'
 const GET_BRANDS = 'GET_BRANDS'
 const SET_MODEL_FOR_BREADCRUMBS = 'SET_MODEL_FOR_BREADCRUMBS'
+const RESET_STATE = 'RESET_STATE';
 
 let initialState = {
   models: [],
@@ -30,6 +31,9 @@ const modelsPageReducer = (state = initialState, action) => {
           modelForBreadcrumbs: action.model
         }
       }
+      case RESET_STATE: {
+        return initialState
+      }
     default:
       return state;
   }
@@ -46,12 +50,16 @@ export const setModelForBreadcrumbs = (model) => (dispatch) => {
   dispatch(setModelForBreadcrumbsAC(model));
 }
 
+export const resetStateData = () => ({type: RESET_STATE})
+
 let setModelForBreadcrumbsAC = (model) => {
   return {
     type: SET_MODEL_FOR_BREADCRUMBS,
     model
   }
 }
+
+
 
 let getModelsAC = (data) => { 
     return {
@@ -61,7 +69,7 @@ let getModelsAC = (data) => {
 }
 
 export let getBrandsAC = (brand) => {
-  return{
+  return {
     type: GET_BRANDS,
     brand
   }

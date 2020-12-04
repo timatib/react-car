@@ -33,13 +33,3 @@ const Model = (props) => {
 };
 
 export default Model;
-
-// "id": "3",
-// "created_at": null,
-// "updated_at": null,
-// "brand_id": "2",
-// "body_title": "760",
-// "body_index": "G11",
-// "year_production_start": "2017",
-// "year_production_end": "2020",
-// "image": ""
