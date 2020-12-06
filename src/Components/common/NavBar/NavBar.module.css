@@ -63,3 +63,11 @@
 .searchContent{
     padding: 30px 20px;
 }
+
+
+@media screen and (max-width: 576px){
+    .searchNavBar input {
+        width: 100px;
+        font-size: 0.8rem;
+    }
+}

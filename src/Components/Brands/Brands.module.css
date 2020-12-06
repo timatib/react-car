@@ -63,3 +63,30 @@
     padding: 20px 0px;
     font-size: 1.2rem;
 }
+
+@media screen and (max-width: 576px){
+    .carItem {
+        width: auto;
+
+        min-width: 100px;
+        max-width: 100px;
+        margin: 5px;
+        height: 150px;
+        padding: 10px; 
+    }
+
+    .carItem .title {
+        padding: 7px 0px; 
+    }
+
+    .carItem .logoWrapper .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .carsWrapper {
+        justify-content: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
