@@ -7,22 +7,13 @@ const EnginesCards = (props) => {
       {props.data &&
         props.data.map((engine, key) => {
           return (
-            <div
-              key={key}
-              className={props.currentEngineKey == key ? style.selected : ""}
-            >
-              <div
-                onClick={() => props.openEngineDataTable(key)}
-                className={style.engineVolume}
-              >
+            <div key={key} onClick={() => props.openEngineDataTable(key)} className={`${props.currentEngineKey == key ? style.selected : ""} ${style.box}`} >
                 <div className={style.volumeWrapper}>
                   <div>{engine.engine_volume}</div>
                   <div>{engine.transmission}</div>
                 </div>
-
                 {engine.engine_boost_type}
               </div>
-            </div>
           );
         })}
     </div>

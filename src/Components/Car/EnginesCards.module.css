@@ -1,4 +1,4 @@
-.enginesCards {
+/* .enginesCards {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -61,4 +61,87 @@
     .enginesCards > div > .engineVolume {
         font-size: 1.1rem;
     }
+} */
+
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 3px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(255,255,255,.3);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  }
+
+.enginesCards {
+    background: transparent;
+    flex: 1;
+    display: flex;
+    overflow: auto;
 }
+
+.enginesCards .box {
+    display: flex;
+    min-height: min-content; /* needs vendor prefixes */
+    background: rgba(255,255,255,0.1);
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.6s;
+    width: 100%;
+    max-width: 150px;
+    min-width: 150px;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+}
+
+.enginesCards .box.selected {
+    background: white;
+    color: black;
+}
+
+.enginesCards .box.selected > .volumeWrapper:first-child {
+    color: black;
+}
+
+.enginesCards > div {
+    width: 700px;
+
+}
+
+.enginesCards > div > .volumeWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    color: white;
+}
+
+.enginesCards > .box > .volumeWrapper:first-child {
+    font-size: 1.7rem;
+    color: white;
+}
+
+
+@media screen and (max-width: 768px){
+    .enginesCards > .box {
+        width: 22%;
+    }
+
+    .enginesCards > .box > .volumeWrapper:first-child {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .enginesCards > .box {
+        padding: 1px 15px;
+    }
+
+    .enginesCards > .box > .volumeWrapper:first-child {
+        font-size: 1.1rem;
+    }
+} 
