@@ -5,7 +5,7 @@
     backdrop-filter: blur(20px);
     cursor: pointer;
     margin-bottom: 10px;
-
+    
 }
 
 .enginesCards > div {
@@ -37,5 +37,28 @@
 .volumeWrapper{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+     justify-content: space-between; 
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .enginesCards > div {
+        width: 22%;
+    }
+
+    .enginesCards > div > .engineVolume {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .enginesCards > div{
+        padding: 1px 15px;
+    }
+
+    .enginesCards > div > .engineVolume {
+        font-size: 1.1rem;
+    }
 }

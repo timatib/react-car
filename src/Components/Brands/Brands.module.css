@@ -88,7 +88,29 @@
 
 @media screen and (max-width: 768px){
     .carsWrapper > div {
+        width: 25%;
+    }
+
+    
+}
+
+@media screen and (max-width: 576px){
+    .carsWrapper > div {
         width: 100%;
         flex: 1;
     }
+
+    .carItem{
+        height: 170px;
+    }
+
+    
+}
+
+@media screen and (max-width: 340px){
+    .carItem{
+        min-width: 120px;
+    }
+
+    
 }

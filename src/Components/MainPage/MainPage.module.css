@@ -1,6 +1,5 @@
 .carsWrapper{
     width: 100%;
-    position: absolute;
     bottom: 30%;
 }
 
@@ -12,7 +11,5 @@
 
 @media screen and (max-width: 576px){
     .carsWrapper{
-        position: static;
-        /* bottom: 6%; */
     }
 }
