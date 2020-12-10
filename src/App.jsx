@@ -6,10 +6,12 @@ import style from "./App.module.css";
 import Car from './components/Car/Car';
 import Footer from './components/common/Footer/Footer';
 import BreadcrumbsContainer from "./components/common/Breadcrumbs/BreadcrumbsContainer";
+import { useState } from "react";
 
 const App = () => {
+
   return (
-    <div className={style.App}>
+    <div className={style.App} >
       <div className={style.wrapper}>
         <div className={style.navbarWrapper}>
           <NavBar />

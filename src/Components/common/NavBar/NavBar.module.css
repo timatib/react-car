@@ -70,4 +70,8 @@
         width: 100px;
         font-size: 0.8rem;
     }
+
+    .navbar{
+        padding: 15px 10px;
+    }
 }
