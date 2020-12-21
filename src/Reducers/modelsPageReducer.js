@@ -4,11 +4,13 @@ const GET_MODELS = 'GET_MODELS'
 const GET_BRANDS = 'GET_BRANDS'
 const SET_MODEL_FOR_BREADCRUMBS = 'SET_MODEL_FOR_BREADCRUMBS'
 const RESET_STATE = 'RESET_STATE';
+const GET_URL= 'GET_URL'
 
 let initialState = {
   models: [],
   brand: '',
-  modelForBreadcrumbs: ''
+  modelForBreadcrumbs: '',
+  url: 'as'
 };
 
 const modelsPageReducer = (state = initialState, action) => {
@@ -74,5 +76,7 @@ export let getBrandsAC = (brand) => {
     brand
   }
 }
+
+
 
 export default modelsPageReducer;

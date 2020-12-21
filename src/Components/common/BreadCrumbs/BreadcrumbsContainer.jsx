@@ -34,7 +34,6 @@ class BreadcrumbsContainer extends React.Component {
 
     if(this.state.currentUrl) {
       let explodedUrl = this.state.currentUrl.split('/');
-
       if(explodedUrl.length == 2) {
         this.setState({currentUrlExploded: [ 
           {title: 'Главная', link: '/'}, 

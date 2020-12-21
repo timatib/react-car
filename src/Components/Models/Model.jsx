@@ -22,7 +22,7 @@ const Model = (props) => {
             </div>
           </div>
           <div className={style.right}>
-           
+           {console.log(modelDesctiption.image)}
             <div>
               <img src={modelDesctiption.image ? modelDesctiption.image : defaultCar} className={style.carImage} alt="img"/>
             </div>

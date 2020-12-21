@@ -1,10 +1,12 @@
 import { NavBarAPI } from "../api/api";
 
 const SET_RESULT = "SET_RESULT";
+const SET_INPUT_VALUE = 'SET_INPUT_VALUE'
 
 let initialState = {
   searchQuery: "",
   result: [],
+  inputValue: false
 };
 
 const navReduser = (state = initialState, action) => {
@@ -14,6 +16,12 @@ const navReduser = (state = initialState, action) => {
         ...state,
         result: action.result,
       };
+    }
+    case SET_INPUT_VALUE: {
+      return{
+        ...state,
+        inputValue: action.inputValue
+      }
     }
     default:
       return state;
@@ -33,5 +41,12 @@ let setResult = (result) => {
     result,
   };
 };
+
+export let setInputValueAC = (inputValue) => {
+return{
+  type: SET_INPUT_VALUE,
+  inputValue
+}
+}
 
 export default navReduser;

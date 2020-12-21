@@ -3,43 +3,41 @@ import { NavLink, withRouter } from "react-router-dom";
 import style from "./NavBar.module.css";
 import logo from "../../../assets/images/logo.svg";
 import { connect } from "react-redux";
-import { getSearchQueryThunk } from "../../../reducers/navReduser";
+import { getSearchQueryThunk, setInputValueAC } from "../../../reducers/navReduser";
 import Model from "../../Models/Model";
 import NavSearchModels from "./NavSearchModels";
 
 const NavBar = (props) => {
-
-  let [inputValue, setInputValue] = useState(false);
   const [enteredText, setEnteredText] = useState("");
   const myRef = useRef();
-
   React.useEffect(() => {
     onSearch();
+    
   }, [enteredText]);
 
   let onSearch = () => { 
-      props.getSearchQuery(enteredText);
+      props.getSearchQuery(enteredText);  
   };
 
   let onСharacterЕracking = ({ target: { value } }) => {
     setEnteredText(value)
     if (value == "") {
-      setInputValue(false);
+      props.setInputValue(false);
     } else {
-      setInputValue(true);
+      props.setInputValue(true);
       
     }
   };
 
   const handleClickOutside = (e) => {
     if (!myRef.current.contains(e.target)) {
-      setInputValue(false);
+      props.setInputValue(false);
       setEnteredText("");
     }
   };
 
   const handleClickInside = () => {
-    setInputValue(false);
+    props.setInputValue(false);
   };
 
   useEffect(() => {
@@ -67,18 +65,18 @@ const NavBar = (props) => {
       </div>
       <div
         className={
-          !inputValue ? style.navSearch : `${style.navSearch} ${style.active}`
+          !props.inputValue ? style.navSearch : `${style.navSearch} ${style.active}`
         }
         ref={myRef}
         onClick={handleClickInside}
       >
-        {inputValue ? (
+        {props.inputValue ? (
           <div className={style.searchContent}>
-            {props.result ? (
+            {!props.result.length == 0 ? (
               <div>
                 {props.result.map((item, key) => {
                   return (
-                    <div kye={key} className={style.brandModelWrapper}>
+                    <div key={key} className={style.brandModelWrapper}>
                       <NavSearchModels data={item} />
                     </div>
                   );
@@ -91,9 +89,9 @@ const NavBar = (props) => {
             )}
           </div>
         ) : (
-          ""
+          "dbfb"
         )}
-      </div>
+      </div>{console.log(props.result)}
     </div>
   );
 };
@@ -101,6 +99,7 @@ const NavBar = (props) => {
 let mapStateToProps = (state) => {
   return {
     result: state.navReduser.result,
+    inputValue: state.navReduser.inputValue
   };
 };
 
@@ -108,4 +107,5 @@ let NavBarWithPouter = withRouter(NavBar)
 
 export default connect(mapStateToProps, {
   getSearchQuery: getSearchQueryThunk,
+  setInputValue: setInputValueAC
 })(NavBarWithPouter);

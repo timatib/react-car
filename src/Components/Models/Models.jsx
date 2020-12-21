@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import style from './Models.module.css';
-import { getBrandsAC, getModelsThunk, setModelForBreadcrumbs, resetStateData } from "../../reducers/modelsPageReducer";
+import { getBrandsAC, getModelsThunk, setModelForBreadcrumbs, resetStateData, getUrlAC } from "../../reducers/modelsPageReducer";
 import Model from './Model';
 import { withRouter } from 'react-router-dom';
 import Preloader from '../common/Preloader/Preloader';
@@ -16,6 +16,7 @@ class Models extends React.Component {
         };
     }
 
+
     
     
     componentDidMount() {
@@ -25,6 +26,7 @@ class Models extends React.Component {
         })
         this.props.getBrands(brand);
         this.setState({url: this.props.location.pathname});  
+        
     }
 
     componentWillUnmount() {
