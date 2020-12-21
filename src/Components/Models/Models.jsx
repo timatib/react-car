@@ -15,6 +15,8 @@ class Models extends React.Component {
           isDataLoading: true
         };
     }
+
+    
     
     componentDidMount() {
         let brand = this.props.match.params.brand;
@@ -30,6 +32,8 @@ class Models extends React.Component {
     }
 
     render () {
+
+        console.log(this.props)
         if(this.state.isDataLoading) {
             return <Preloader />
         }

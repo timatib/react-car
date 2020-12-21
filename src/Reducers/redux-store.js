@@ -4,11 +4,13 @@ import { reducer as formReducer } from 'redux-form';
 import brandReducer from './brandReducer'
 import modelsPageReducer from './modelsPageReducer';
 import carReducer from './carReducer';
+import navReduser from './navReduser';
 
 let reducers = combineReducers({
    brandPage: brandReducer,
    modelsPage: modelsPageReducer,
-   descriptionPage: carReducer
+   descriptionPage: carReducer,
+   navReduser: navReduser
 });
 
 

@@ -6,6 +6,9 @@ const instance = axios.create({
     //baseURL: 'http://127.0.0.1:8000/api/' 
 });
 
+const SEARCH_PATH = '/search'
+const SEARCH_PARAM = 'query='
+
 export const carsAPI = {
     getBrands() {
         return instance.get('brands').then(data => data.data)
@@ -15,5 +18,14 @@ export const carsAPI = {
     },
     getDescription(brand, carId){
         return instance.get(`brands/${brand}/${carId}`).then(data => data.data)
+    }
+    
+}
+
+export const NavBarAPI = {
+    getSearchQuery(searchQuery){
+        return instance.post(`${SEARCH_PATH}`,{
+            search: searchQuery
+        }).then(res => res) 
     }
 }
