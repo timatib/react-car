@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Car.module.css";
-import defaultCar from ".././../assets/images/gost.png";
+import defaultCar from "../../assets/images/gost.png";
 import EngineData from "./EngineData/EngineData";
 import { connect } from "react-redux";
 import { getModelDescriptionThunk, setNameDiscriptionModelAC, resetStateData } from "../../reducers/carReducer";

@@ -11,22 +11,19 @@ class Models extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          url: '',
-          isDataLoading: true
+            url: '',
+            isDataLoading: true
         };
     }
 
-
-    
-    
     componentDidMount() {
         let brand = this.props.match.params.brand;
         this.props.getModels(brand).then(() => {
             this.setState({isDataLoading: false})
         })
         this.props.getBrands(brand);
-        this.setState({url: this.props.location.pathname});  
-        
+        this.setState({url: this.props.location.pathname});
+
     }
 
     componentWillUnmount() {
@@ -34,14 +31,12 @@ class Models extends React.Component {
     }
 
     render () {
-
-        console.log(this.props)
         if(this.state.isDataLoading) {
             return <Preloader />
         }
         return <div className={style.brandModelWrapper}>
             {this.props.models.map((data, key) => {
-                return <Model key={key} data={data} setModelName={this.props.setModelForBreadcrumbs} url={this.state.url}/>
+                return <Model key={key} data={data} url={this.state.url}/>
             })}
         </div>
     }
@@ -55,7 +50,7 @@ let mapDispatchToProps = (state) => {
 
 let withRouterModels = withRouter(Models)
 
-export default connect(mapDispatchToProps, { 
+export default connect(mapDispatchToProps, {
     getModels: getModelsThunk,
     getBrands: getBrandsAC,
     setModelForBreadcrumbs: setModelForBreadcrumbs,

@@ -1,16 +1,16 @@
 .brandModelWrapper {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
 }
 
 .brandModelWrapper > div {
-  width: 33%;
+  width: 100%;
   min-height: 170px;
   background: rgba(255,255,255,0.1);
   border-radius: 5px;
-   margin-bottom: 1%;
+  margin-bottom: 1%;
   backdrop-filter: blur(20px);
 }
 
@@ -80,41 +80,41 @@
     font-size: 1.1rem;
   }
 
-  
-.brandModelWrapper > div > a > div > .left > .info > .year {
-  font-size: 0.7rem;
-}
 
-.brandModelWrapper > div {
-  min-height: 150px;
-}
+  .brandModelWrapper > div > a > div > .left > .info > .year {
+    font-size: 0.7rem;
+  }
 
-  
+  .brandModelWrapper > div {
+    min-height: 150px;
+  }
+
+
 }
 
 @media screen and (max-width: 576px){
-.brandModelWrapper > div {
-  width: 100%;
-  min-height: 120px;
-}
+  .brandModelWrapper > div {
+    width: 100%;
+    min-height: 120px;
+  }
 
-.brandModelWrapper > div > a > div > .left > .info > .title {
-  font-size: 1rem;
-}
+  .brandModelWrapper > div > a > div > .left > .info > .title {
+    font-size: 1rem;
+  }
 
-.brandModelWrapper > div > a > div > .left > .info > .year {
-  font-size: 0.9rem;
-}
+  .brandModelWrapper > div > a > div > .left > .info > .year {
+    font-size: 0.9rem;
+  }
 
-  
+
 }
 
 @media screen and (max-width: 370px){
   .brandModelWrapper > div {
     min-height: 100px;
   }
-    
-  }
+
+}
 
 
 

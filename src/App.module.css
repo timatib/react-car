@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6, a, p, span{
     width: 100%;
     height: auto;
     min-height: calc(100vh - 80px) ;
-    background-image: url('./assets/images/bmwBlinkers.gif');
+    background-image: url('assets/images/bmwBlinkers.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -4,11 +4,17 @@ import style from "./Models.module.css";
 import defaultCar from "../../assets/images/gost.png";
 
 const Model = (props) => {
-  let modelDesctiption = props.data;
+  let modelDesctiption = props.data, link;
+
+  if(props.url) {
+    link = props.url + '/' + props.data.id;
+  } else if(props.data.brand_id) {
+    link = '/brand/' + props.data.brand_id + '/' + props.data.id;
+  }
 
   return (
     <div>
-      <NavLink to={props.url + '/' + props.data.id} onClick={() => props.setModelName(modelDesctiption.body_index)}>
+      <NavLink to={link}>
         <div className={style.brandModelItem}>
           <div className={style.left}>
             <div className={style.info}>
@@ -22,7 +28,6 @@ const Model = (props) => {
             </div>
           </div>
           <div className={style.right}>
-           {console.log(modelDesctiption.image)}
             <div>
               <img src={modelDesctiption.image ? modelDesctiption.image : defaultCar} className={style.carImage} alt="img"/>
             </div>
