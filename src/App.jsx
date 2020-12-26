@@ -9,6 +9,7 @@ import BreadcrumbsContainer from "./components/common/Breadcrumbs/BreadcrumbsCon
 import { useState } from "react";
 import { connect } from "react-redux";
 
+
 const App = (props) => {
   return (
     <div className={style.App}>
