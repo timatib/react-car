@@ -8,7 +8,7 @@
     border-radius: 10px;
 }
 
-.selected{
+.selected {
     border: 5px solid#fff;
 }
 
@@ -20,10 +20,15 @@
     background: rgba(2552,255,255,0.1);
 }
 
+.carDataTableStyle {
+    padding: 10px;
+    font-size: 0.8rem;
+}
+
 @media screen and (max-width: 576px){
+
     .carDataTableStyle{
-        padding: 10px;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     .carDataTableStyle tr {

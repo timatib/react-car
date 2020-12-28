@@ -52,42 +52,22 @@ class Car extends React.Component {
     }
 
     let modelDescription = this.props.modelDescription;
+    console.log(modelDescription);
 
     return (
       <div className={style.featureModelWrapper}>
   
         <div className={style.titleDescriptionImgWrapper}>
           <div className={style.titleDescriptionWrapper}>
+            <div className={style.titleDescriptionWrapperContent}>
             <div className={style.title}>
-              <h3>
-                {modelDescription.brand}{" "}
+                {modelDescription.brand}
+                <span> {modelDescription.body_title} </span>
                 <span>{modelDescription.body_index}</span>
-              </h3>
             </div>
-            <div className={style.description}>
-              <div className={style.modelYear}>
-                <h4>Модель: &#160;{modelDescription.body_title}</h4>
-                <h4>
-                  Год выпуска:&#160;{modelDescription.year_production_start}-
-                  {modelDescription.year_production_end}
-                </h4>
-              </div>
-              <h4>
-                {modelDescription.gearbox ? (
-                  <div>
-                    <h4>
-                      Коробка: &#160;
-                      {modelDescription.gearbox.gearbox_name}
-                      <br></br> Тип: &#160;
-                      {modelDescription.gearbox.gearbox_type}
-                      <br></br> Количество скоростей: &#160;
-                      {modelDescription.gearbox.gears_number}
-                    </h4>
-                  </div>
-                ) : (
-                  <div></div>
-                )}
-              </h4>
+            <div className={style.productionYears}>
+              {modelDescription.year_production_start} - {modelDescription.year_production_end}
+            </div>
             </div>
           </div>
 

@@ -19,16 +19,23 @@
   background: rgba(255,255,255,0.2);
 }
 
+.brandModelWrapper > div > a {
+  height: inherit;
+  min-height: inherit;
+  width: 100%;
+  display: block;
+}
 
 .brandModelWrapper > div > a > div {
   width: 100%;
-  height: 100%;
-  display: flex;
+  height: inherit;
+  min-height: inherit;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
 }
 
 .brandModelWrapper > div > a > div > .left {
   flex: 2;
-  height: inherit;
   padding: 15px;
   box-sizing: border-box;
 }
@@ -42,18 +49,18 @@
 .brandModelWrapper > div > a > div > .left > .info > .title {
   font-size: 1.4rem;
   color: white;
+  font-weight: 600;
 }
 
 .brandModelWrapper > div > a > div > .left > .info > .year {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: white;
-  position: absolute;
   bottom: 0;
+  position: absolute;
 }
 
 .brandModelWrapper > div > a > div > .right {
   flex: 3;
-  height: inherit;
   position: relative;
   overflow: hidden;
 }

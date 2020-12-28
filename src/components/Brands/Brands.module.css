@@ -1,6 +1,7 @@
 .carsWrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
 }
 
 .carsWrapper a {
@@ -27,7 +28,7 @@
 }
 
 .carsWrapper > div {
-    width: 20%;
+    width: 100%;
 }
 
 
@@ -69,48 +70,48 @@
     font-size: 1.2rem;
 }
 
-@media screen and (max-width: 576px){
-    .carItem .title {
-        padding: 7px 0px; 
-    }
+/*@media screen and (max-width: 576px){*/
+/*    .carItem .title {*/
+/*        padding: 7px 0px; */
+/*    }*/
 
-    .carItem .logoWrapper .logo {
-        width: 70px;
-        height: 70px;
-    }
+/*    .carItem .logoWrapper .logo {*/
+/*        width: 70px;*/
+/*        height: 70px;*/
+/*    }*/
 
-    .carsWrapper {
-        justify-content: center;
-        margin-top: 25px;
-        margin-bottom: 25px;
-    }
-}
+/*    .carsWrapper {*/
+/*        justify-content: center;*/
+/*        margin-top: 25px;*/
+/*        margin-bottom: 25px;*/
+/*    }*/
+/*}*/
 
-@media screen and (max-width: 768px){
-    .carsWrapper > div {
-        width: 25%;
-    }
+/*@media screen and (max-width: 768px){*/
+/*    .carsWrapper > div {*/
+/*        width: 25%;*/
+/*    }*/
 
-    
-}
+/*    */
+/*}*/
 
-@media screen and (max-width: 576px){
-    .carsWrapper > div {
-        width: 100%;
-        flex: 1;
-    }
+/*@media screen and (max-width: 576px){*/
+/*    .carsWrapper > div {*/
+/*        width: 100%;*/
+/*        flex: 1;*/
+/*    }*/
 
-    .carItem{
-        height: 170px;
-    }
+/*    .carItem{*/
+/*        height: 170px;*/
+/*    }*/
 
-    
-}
+/*    */
+/*}*/
 
-@media screen and (max-width: 340px){
-    .carItem{
-        min-width: 120px;
-    }
+/*@media screen and (max-width: 340px){*/
+/*    .carItem{*/
+/*        min-width: 120px;*/
+/*    }*/
 
-    
-}
+/*    */
+/*}*/

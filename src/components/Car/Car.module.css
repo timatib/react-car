@@ -12,16 +12,28 @@
     width: 50%;
     height: auto; 
     color: #fff;
+    display: flex;
+    align-items: center;
 }
 
-.title {
+.titleDescriptionWrapperContent {
+    width: 100%;
+    height: inherit;
+}
+
+.titleDescriptionWrapperContent .title {
     width: 90%;
     height: auto;
     min-height: 50px;
     border-radius: 5px;
-    background: rgba(255,255,255,0.1);
-    padding: 10px 10px;
+    font-size: 2.4rem;
     margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.titleDescriptionWrapperContent .productionYears {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .description {
@@ -73,6 +85,31 @@
 }
 
 @media screen and (max-width: 576px){
+    .titleDescriptionImgWrapper {
+        flex-direction: column;
+    }
+
+    .titleDescriptionImgWrapper .titleDescriptionWrapper {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .titleDescriptionImgWrapper .titleDescriptionWrapper .titleDescriptionWrapperContent .title {
+        width: 100%;
+        font-size: 1.4rem;
+        text-align: center;
+        min-height: unset;
+    }
+
+    .titleDescriptionImgWrapper .imgCar {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .titleDescriptionImgWrapper .titleDescriptionWrapper .titleDescriptionWrapperContent .productionYears {
+        text-align: center;
+    }
+
     .title {
         font-size: 0.7rem;
         width: 85%;

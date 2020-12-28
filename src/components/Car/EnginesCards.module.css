@@ -1,80 +1,14 @@
-/* .enginesCards {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    backdrop-filter: blur(20px);
-    cursor: pointer;
-    margin-bottom: 10px;
-    
-}
-
-.enginesCards > div {
-    width: 22%;
-    background: rgba(255,255,255,0.1);
-    margin: 5px;
-    border-radius: 10px;
-    padding: 10px 20px;
-    transition: 0.6s;
-}
-
-.enginesCards > div:hover {
-    background: rgba(255,255,255,0.2); 
-}
-
-.enginesCards > div.selected {
-    background: white;
-    color: black;
-}
-
-.enginesCards > div.selected > .engineVolume {
-    color: black;
-}
-.enginesCards > div > .engineVolume {
-    font-size: 1.7rem;
-    color: white;
-}
-
-.volumeWrapper{
-    width: 100%;
-    display: flex;
-     justify-content: space-between; 
-}
-
-
-
-
-@media screen and (max-width: 768px){
-    .enginesCards > div {
-        width: 22%;
-    }
-
-    .enginesCards > div > .engineVolume {
-        font-size: 1.3rem;
-    }
-}
-
-@media screen and (max-width: 576px){
-    .enginesCards > div{
-        padding: 1px 15px;
-    }
-
-    .enginesCards > div > .engineVolume {
-        font-size: 1.1rem;
-    }
-} */
-
-
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 3px;
     height: 6px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgba(255,255,255,.3);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-  }
+}
 
 .enginesCards {
     background: transparent;
@@ -93,7 +27,7 @@
     transition: 0.6s;
     width: 100%;
     max-width: 150px;
-    min-width: 150px;
+    min-width: 100px;
     flex-direction: column;
     color: white;
     cursor: pointer;
@@ -138,7 +72,7 @@
 
 @media screen and (max-width: 576px){
     .enginesCards > .box {
-        padding: 1px 15px;
+        padding: 6px 15px;
     }
 
     .enginesCards > .box > .volumeWrapper:first-child {

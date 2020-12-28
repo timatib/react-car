@@ -1,10 +1,13 @@
 import * as axios from 'axios'
 
 const instance = axios.create({
-    withCredentials: false, 
-    baseURL: 'http://193.124.18.152/api/' 
-    //baseURL: 'http://127.0.0.1:8000/api/' 
+    withCredentials: false,
+    //headers: {"Access-Control-Allow-Origin": "*"},
+    baseURL: 'http://193.124.18.152/api/'
+    //baseURL: 'http://127.0.0.1:8000/api/'
 });
+
+//instance.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
 const SEARCH_PATH = '/search'
 const SEARCH_PARAM = 'query='
