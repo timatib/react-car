@@ -23,7 +23,7 @@ class Brands extends React.Component {
   
   render() {
     if(this.state.isDataLoading) {
-      return <Preloader />
+      return false
     } 
     return (
       <div className={style.carsWrapper}>

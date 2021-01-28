@@ -2,6 +2,8 @@ import { NavBarAPI } from "../api/api";
 
 const SET_RESULT = "SET_RESULT";
 const SET_INPUT_VALUE = 'SET_INPUT_VALUE'
+const RESET_STATE = 'RESET_STATE'
+
 
 let initialState = {
   searchQuery: "",
@@ -23,6 +25,7 @@ const navReduser = (state = initialState, action) => {
         inputValue: action.inputValue
       }
     }
+
     default:
       return state;
   }
@@ -48,5 +51,9 @@ return{
   inputValue
 }
 }
+
+export const resetStateData = () => ({type: RESET_STATE})
+
+
 
 export default navReduser;

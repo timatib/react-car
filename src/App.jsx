@@ -31,10 +31,5 @@ const App = (props) => {
   );
 };
 
-let mapDispatchToProps = (state) => {
-  return {
-    inputValue: state.navReduser.inputValue,
-  };
-};
 
-export default connect(mapDispatchToProps, {})(App);
+export default App;
