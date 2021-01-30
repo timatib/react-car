@@ -1,12 +1,72 @@
 .leftMenu{
+    color: #fff;
     position: absolute;
-    width: 200px;
-    height:  calc(100vh - 20px);
-    background: red;
-    left: -200px;
-    transition: transform 0.6s;
+    width: 300px;
+    height: 100%;
+    min-height:  calc(100vh);
+    background: #1A1A1A;
+    box-shadow: 0 0 25px rgba(253, 253, 253, 0.267);
+    left: -300px;
+    transition: transform 0.5s;
 }
 
 .openMenu{
-    transform: translateX(200px);
+    transform: translateX(300px);
+}
+
+.nameBlockFilter{
+    margin-left: 10px;
+}
+
+.blockSpeed{
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+
+
+.blockSpeed p {
+    font-size: 1rem;
+}
+
+.nameValueSpeed{
+    font-size: 1.3rem;
+}
+
+.valueSpeed{
+    font-size: 1rem;
+}
+
+.minMaxSpeed{
+    margin-top: 7px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.minMaxSpeed > p {
+    width: 30%;
+}
+
+.searchModelSpeed{
+    margin-top: 15px;
+    outline: none;
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px 0px;
+    width: 100%;
+    background-color: royalblue;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    color: #fff;
+    transition: 0.6s;
+}
+
+.searchModelSpeed:hover{
+    border: 2px solid royalblue;
+    background-color: #fff;
+    color: royalblue;
 }

@@ -5,6 +5,14 @@ import Model from "../../Models/Model";
 import Preloader from "../Preloader/Preloader";
 
 const BlockResponseSearch = (props) => {
+
+
+  const hideSearchPanel = () => {
+    props.setEnteredText('')
+    props.setInputValue(false)
+  }
+ 
+
   return (
     <div>
       <div
@@ -26,7 +34,7 @@ const BlockResponseSearch = (props) => {
             {props.inputValue && (
               <div className={style.searchContent}>
                 {!props.result.length == 0 ? (
-                  <div className={modelStyle.brandModelWrapper}>
+                  <div className={modelStyle.brandModelWrapper} onClick={hideSearchPanel}>
                     {props.result.map((data, key) => {
                       return <Model key={key} data={data} />;
                     })}

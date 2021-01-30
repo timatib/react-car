@@ -15,7 +15,7 @@ class Car extends React.Component {
     super(props);
     this.state = {
       currentOpenedEngineDataNumber: 0,
-      isDataLoading: true
+      isDataLoading: true,
     };
   }
 
@@ -24,6 +24,7 @@ class Car extends React.Component {
     let carId = this.props.match.params.carId
       ? this.props.match.params.carId
       : 1;
+
     this.props.getModelDescription(brand, carId).then(() => {
       this.setState({isDataLoading: false})
     })
@@ -37,10 +38,6 @@ class Car extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    this.props.resetState();
-  }
-
 
   openEngineDataTable = (key) => {
     this.setState({ currentOpenedEngineDataNumber: key });
@@ -52,7 +49,6 @@ class Car extends React.Component {
     }
 
     let modelDescription = this.props.modelDescription;
-    console.log(modelDescription);
 
     return (
       <div className={style.featureModelWrapper}>

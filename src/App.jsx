@@ -6,10 +6,13 @@ import style from "./App.module.css";
 import Car from "./components/Car/Car";
 import Footer from "./components/common/Footer/Footer";
 import BreadcrumbsContainer from "./components/common/Breadcrumbs/BreadcrumbsContainer";
-import { connect } from "react-redux";
+import LeftMenuFilterContainer from "./components/common/LeftMenuFilter/LeftMenuFilterContainer";
 
 const App = (props) => {
+
   return (
+    <div className={style.mainWrapper}>
+      <LeftMenuFilterContainer />
       <div className={style.App}>
         <div className={style.wrapper}>
           <div className={style.navbarWrapper}>
@@ -27,6 +30,7 @@ const App = (props) => {
           </div>
         </div>
         <Footer />
+      </div>
       </div>
   );
 };

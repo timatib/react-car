@@ -1,14 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import style from "./Models.module.css";
 import defaultCar from "../../assets/images/gost.png";
 
 const Model = (props) => {
   let modelDesctiption = props.data, link;
 
+
   if(props.url) {
     link = props.url + '/' + props.data.id;
-  } else if(props.data.brand_id) {
+  } 
+  else if(props.data.brand_id) {
     link = '/brand/' + props.data.brand_id + '/' + props.data.id;
   }
 
@@ -38,4 +40,6 @@ const Model = (props) => {
   );
 };
 
-export default Model;
+const ModelWithRouter = withRouter(Model)
+
+export default ModelWithRouter;
